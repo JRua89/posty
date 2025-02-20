@@ -1,4 +1,4 @@
-# Project Name
+# Project Post site
 
 A Laravel-based web application for [brief project description, e.g., "managing tasks with user authentication, pagination, and email notifications"]. Built with Laravel [version, e.g., 10.x], this project demonstrates core features like routing, database interactions, and modern PHP development practices.
 
