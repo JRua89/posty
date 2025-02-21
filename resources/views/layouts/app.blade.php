@@ -13,10 +13,18 @@
         </ul>
 
         <ul class="flex items-center">
-        <li><a href="" class="p-3">John Rua</a></li>
-        <li><a href="" class="p-3">Login</a></li>
-        <li><a href="{{ route('register') }}" class="p-3">Register</a></li>
-        <li><a href="" class="p-3">Log Out</Out></a></li>
+            @if(auth()->user())
+            <li><a href="" class="p-3">{{ auth()->user()->name }}</a></li>
+            <li><a href="" class="p-3">Log Out</Out></a></li>
+            @else
+            <li><a href="{{ route('register') }}" class="p-3">Register</a></li>
+            <li><a href="" class="p-3">Login</a></li>
+            @endif
+
+    
+        
+       
+        
         </ul>
     </nav>
 @yield('content')
