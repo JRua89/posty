@@ -15,7 +15,7 @@
         <ul class="flex items-center">
         <li><a href="" class="p-3">John Rua</a></li>
         <li><a href="" class="p-3">Login</a></li>
-        <li><a href="" class="p-3">Register</a></li>
+        <li><a href="{{ route('register') }}" class="p-3">Register</a></li>
         <li><a href="" class="p-3">Log Out</Out></a></li>
         </ul>
     </nav>
