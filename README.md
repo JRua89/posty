@@ -33,8 +33,8 @@ Follow these steps to set up the project locally, as shown in the crash course:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/laravel-links-manager.git
-   cd laravel-links-manager
+   git clone https://github.com/JRua89/posty.git
+   cd posty
    ```
 
 2. **Install PHP Dependencies**:
@@ -270,11 +270,3 @@ The crash course doesn’t implement email functionality, but Laravel’s founda
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-### Notes
-- **Tailwind CSS Integration**: The new step 4 follows the [Tailwind CSS Laravel Mix guide](https://tailwindcss.com/docs/installation/framework-guides/laravel/mix) exactly, replacing the Vite-based setup from the crash course with Mix for consistency with the provided link. If you prefer Vite (default in Laravel 10 and the video), let me know, and I can adjust it back!
-- **Adjustment**: The video uses Vite with Breeze, but the Tailwind guide you linked uses Mix. I’ve assumed you want Mix per the link; otherwise, the original README’s `npm run dev` step suffices for Vite.
-- **Customization**: Update `yourusername` and the repo URL as needed.
-
-Let me know if you want to revert to Vite or tweak anything else!
