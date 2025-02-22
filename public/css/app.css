@@ -700,6 +700,9 @@
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
+  .border-red-500 {
+    border-color: var(--color-red-500);
+  }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
@@ -708,6 +711,9 @@
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -726,6 +732,9 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -759,6 +768,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-black {
+    color: var(--color-black);
+  }
   .text-gray-200 {
     color: var(--color-gray-200);
   }
@@ -780,8 +792,8 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
-  .text-red-200 {
-    color: var(--color-red-200);
+  .text-red-500 {
+    color: var(--color-red-500);
   }
   .text-white {
     color: var(--color-white);
