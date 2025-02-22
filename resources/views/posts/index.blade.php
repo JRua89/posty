@@ -28,6 +28,21 @@
                     <span class="text-gray-600 text-sm">{{ $post->created_at->diffforhumans() }}</span> 
 
                     <p class="mb-2">{{ $post->body }}</p>
+
+                    <div class="flex items-center">
+                        <form action="" method="post" class="mr-5 p-4">
+                            @csrf
+                            <button type="submit" class="text-blue-500">Like</button>
+                        </form>
+                        <form action="" method="post" class="mr-5 p-4">
+                            @csrf
+                            <button type="submit" class="text-blue-500">Unlike</button>
+                        </form>
+
+                        <span>{{ $post->likes->count() ? $post->likes->count() . ' ' . Str::plural('like', $post->likes->count()) : '' }}</span>
+
+                    </div>
+
                 </div>
             @endforeach
 
