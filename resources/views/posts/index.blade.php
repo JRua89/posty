@@ -28,20 +28,32 @@
                     <span class="text-gray-600 text-sm">{{ $post->created_at->diffforhumans() }}</span> 
 
                     <p class="mb-2">{{ $post->body }}</p>
-
+                    
+                        <div>
+                        @can('delete',$post)
+                        <form action="{{ route("posts.destroy", $post)  }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-blue-500">Delete</button>
+                            </form>
+                        @endcan
+                        </div>
+                  
                     <div class="flex items-center">
-                        @if(!$post->likedBy(auth()->user()))
-                        <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-5 p-4">
-                            @csrf
-                            <button type="submit" class="text-blue-500">Like</button>
-                        </form>
-                        @else
-                        <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-5 p-4">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-blue-500">Unlike</button>
-                        </form>
-                        @endif
+                        @auth
+                            @if(!$post->likedBy(auth()->user()))
+                            <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-5 p-4">
+                                @csrf
+                                <button type="submit" class="text-blue-500">Like</button>
+                            </form>
+                            @else
+                            <form action="{{ route('posts.likes', $post) }}" method="post" class="mr-5 p-4">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-blue-500">Unlike</button>
+                            </form>
+                            @endif
+                        @endauth
 
                         <span class="flex items-center space-x-3 text-gray-600">
                         @if($post->likes->count())
@@ -51,11 +63,8 @@
                             </svg>
                         @endif
 
-                        <!-- Vertical bar | -->
-                        @if($post->dislikes->count() >= 1 && $post->likes->count() >=1)
-                        <div class="w-px h-1 p-4 bg-gray-600 mx-2">|</div>
-                        @endif
 
+                
                         @if($post->dislikes->count())
                     <span>{{ $post->dislikes->count() . ' ' . Str::plural('dislike', $post->dislikes->count()) }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 24" stroke-width="1" stroke="currentColor" class="w-5 h-5 text-gray-600">
